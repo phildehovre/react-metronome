@@ -101,34 +101,7 @@ export default function App() {
         })
     }, [bpm])
 
-    // const _getToken = (async () => {
-    //     const res = await fetch('https://accounts.spotify.com/api/token', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/x-www-form-urlencoded',
-    //             'Authorization': `Basic ${btoa(clientId+':'+clientSecret)}`
-    //         },
-    //         body: 'grant_type=client_credentials'
-    //     })
-    //     const data = await res.json();
-    //     console.log(data)
-    //     return data.access_token;
-    // })()
     
-    // function spotifyTest() {
-    //     const token = async () => {
-    //             const res = await fetch('https://accounts.spotify.com/api/token', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'Content-Type': 'application/x-www-form-urlencoded',
-    //                     'Authorization': `Basic ${btoa(clientId+':'+clientSecret)}`
-    //                 },
-    //                 body: 'grant_type=client_credentials'
-    //             })
-    //             const data = await res.json();
-    //             return data.access_token;
-    //         }
-    // }
         
     
 
