@@ -8,8 +8,8 @@ import Woodblock from './ressources/Woodblock.mp3';
 import axios from 'axios';
 
 
-const clientId = '1b6e57ce73a04adba0cb72a6173d6604'
-const clientSecret = '3bf95ba17c284904861793c63188b074'
+// const clientId = '1b6e57ce73a04adba0cb72a6173d6604'
+// const clientSecret = '3bf95ba17c284904861793c63188b074'
 
 export default function App() {
 
@@ -100,8 +100,6 @@ export default function App() {
             (clearTimeout(intervalId))
         })
     }, [bpm])
-
-    
         
     
 
