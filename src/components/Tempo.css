@@ -1,0 +1,68 @@
+body {
+    margin: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: top;
+    min-height: 100vh;
+    text-align: center;
+
+}   
+
+.header h1 {
+    background-color: rgb(109, 109, 109);
+    width: 250px !important;
+    padding: 20px !important;
+    color: white !important;
+}
+
+
+.metronome {
+    background-color: rgb(168, 168, 168);
+    width: 250px;
+    height: 500px;
+    border-radius: 5px;
+    /* padding-top: 50px; */
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.metronome-box {
+    display: grid;
+    justify-items: center;
+    /* padding: 15px; */
+    grid-template-columns: 1fr 1fr;
+    }   
+
+input {
+    padding: 10px !important;
+    border-radius: 50px;
+    width: 7.5em !important;
+    text-align: center !important;
+}
+
+button {
+    margin: 10px !important;
+    padding: 15px 20px !important
+}
+
+.dropdown {
+    border-radius: 50px !important; 
+    min-width: 200px !important;
+    margin: 10px !important;
+}
+
+.beep {
+    display: flex;
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    border: 0.5px solid grey
+}
+
+.range {
+    width: fit-content !important
+}
+
+.song-list {
+    grid-column-start: 2 !important;
+    grid-column-end: 3;
+}
