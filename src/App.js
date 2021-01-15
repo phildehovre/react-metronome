@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import useSound from 'use-sound';
 import Tempo from './components/Tempo';
-import SongList from './components/SongList';
+import axios from 'axios'
+
+// Sound effects
+
 import Sidestick from './ressources/Click.wav';
 import Cowbell from './ressources/Cowbell.mp3';
 import Woodblock from './ressources/Woodblock.mp3';
-import axios from 'axios';
 
 
-// const clientId = '1b6e57ce73a04adba0cb72a6173d6604'
-// const clientSecret = '3bf95ba17c284904861793c63188b074'
+const API_KEY = '93f2be180a4be75f06c1a7d2829e8bbc'
 
 export default function App() {
 
@@ -20,6 +21,7 @@ export default function App() {
     const [light, setLight] = useState(false)
     const [soundEffect, setSoundEffect] = useState(Sidestick)
     const [debouncedBpm, setDebouncedBpm] = useState(bpm)
+    const [songs, setSongs] = useState([])
 
     const [cowbell] = useSound(Cowbell)
     const [woodblock] = useSound(Woodblock)
@@ -101,7 +103,20 @@ export default function App() {
         })
     }, [bpm])
         
-    
+
+    useEffect(() => {
+      (async () => {
+        const res = await axios.get(`https://api.getsongbpm.com/tempo/`, {
+          headers: {
+            Authorization: API_KEY,
+          },
+          params: {
+          bpm: debouncedBpm
+        }})
+        setSongs(res.data)
+        console.log(res.data)
+      })()
+    }, [debouncedBpm])
 
     return (
         <>
@@ -116,10 +131,13 @@ export default function App() {
                 setSoundEffect={setSoundEffect}
                 soundEffect={soundEffect}
                 />
-        </div> <hr className="ui divider"/>
-        <div className="ui container song-list">
-            <SongList />
+        </div> <br />
+        <div className="bottom">
+          ©Philippe De Hovre 2021
         </div>
+        {/* <div>
+            <SongList songs={songs}/>
+        </div> */}
         </>
     )
 }
